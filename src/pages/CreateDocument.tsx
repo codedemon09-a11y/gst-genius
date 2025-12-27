@@ -41,7 +41,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 
-const DOC_TYPE_INFO: Record<DocumentType, { label: string; icon: React.ReactNode }> = {
+const DOC_TYPE_INFO: Partial<Record<DocumentType, { label: string; icon: React.ReactNode }>> = {
   invoice: { label: 'Tax Invoice', icon: <FileText className="h-5 w-5" /> },
   quotation: { label: 'Quotation', icon: <FileCheck className="h-5 w-5" /> },
   proforma: { label: 'Proforma Invoice', icon: <FileClock className="h-5 w-5" /> },
@@ -130,7 +130,7 @@ const CreateDocument = () => {
     );
   }
 
-  const docInfo = DOC_TYPE_INFO[docType];
+  const docInfo = DOC_TYPE_INFO[docType] || { label: 'Document', icon: <FileText className="h-5 w-5" /> };
 
   return (
     <MainLayout>
