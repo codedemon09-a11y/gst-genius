@@ -1,0 +1,22 @@
+# GST Invoice Pro - Robots.txt
+# https://gst-invoice-pro.netlify.app/
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://gst-invoice-pro.netlify.app/sitemap.xml
