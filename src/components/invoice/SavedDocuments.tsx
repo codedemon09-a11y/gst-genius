@@ -22,7 +22,7 @@ interface SavedDocumentsProps {
   onDelete: (id: string) => void;
 }
 
-const DOC_ICONS: Record<DocumentType, React.ReactNode> = {
+const DOC_ICONS: Partial<Record<DocumentType, React.ReactNode>> = {
   'sale-invoice': <FileText className="h-4 w-4" />,
   'purchase-invoice': <Receipt className="h-4 w-4" />,
   'quotation': <FileCheck className="h-4 w-4" />,
@@ -35,9 +35,11 @@ const DOC_ICONS: Record<DocumentType, React.ReactNode> = {
   'debit-note': <FileOutput className="h-4 w-4" />,
   'inward-payment': <Wallet className="h-4 w-4" />,
   'outward-payment': <CreditCard className="h-4 w-4" />,
+  'bill': <Receipt className="h-4 w-4" />,
+  'invoice': <FileText className="h-4 w-4" />,
 };
 
-const DOC_COLORS: Record<DocumentType, string> = {
+const DOC_COLORS: Partial<Record<DocumentType, string>> = {
   'sale-invoice': 'bg-primary/10 text-primary',
   'purchase-invoice': 'bg-orange-500/10 text-orange-500',
   'quotation': 'bg-success/10 text-success',
@@ -50,6 +52,8 @@ const DOC_COLORS: Record<DocumentType, string> = {
   'debit-note': 'bg-red-500/10 text-red-500',
   'inward-payment': 'bg-green-500/10 text-green-500',
   'outward-payment': 'bg-rose-500/10 text-rose-500',
+  'bill': 'bg-orange-500/10 text-orange-500',
+  'invoice': 'bg-primary/10 text-primary',
 };
 
 export const SavedDocuments = ({ documents, onLoad, onDelete }: SavedDocumentsProps) => {
@@ -98,8 +102,8 @@ export const SavedDocuments = ({ documents, onLoad, onDelete }: SavedDocumentsPr
                     onClick={() => onLoad(doc.id)}
                   >
                     <div className="flex items-start gap-3">
-                      <div className={`p-2 rounded-lg ${DOC_COLORS[doc.type]}`}>
-                        {DOC_ICONS[doc.type]}
+                      <div className={`p-2 rounded-lg ${DOC_COLORS[doc.type] || 'bg-muted'}`}>
+                        {DOC_ICONS[doc.type] || <FileText className="h-4 w-4" />}
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 flex-wrap">
