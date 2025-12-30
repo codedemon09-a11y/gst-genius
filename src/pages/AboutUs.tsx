@@ -24,10 +24,10 @@ const AboutUs = () => {
               </Button>
             </Link>
 
-            <div className="text-center mb-12">
-              <Building2 className="w-16 h-16 text-primary mx-auto mb-4" />
-              <h1 className="text-4xl font-bold text-foreground mb-4">About BillCraft</h1>
-              <p className="text-muted-foreground text-lg">Professional Invoice & Quotation Generator</p>
+            <div className="text-center mb-8 md:mb-12">
+              <Building2 className="w-12 h-12 md:w-16 md:h-16 text-primary mx-auto mb-3 md:mb-4" />
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 md:mb-4">About BillCraft</h1>
+              <p className="text-muted-foreground text-base md:text-lg">Professional Invoice & Quotation Generator</p>
             </div>
             
             <div className="space-y-8">

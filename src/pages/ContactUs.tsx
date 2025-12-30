@@ -42,10 +42,10 @@ const ContactUs = () => {
             </Button>
           </Link>
           
-          <div className="glass-card rounded-2xl p-8 space-y-8 animate-fade-in">
-            <h1 className="text-4xl font-bold gradient-text">Contact Us</h1>
+          <div className="glass-card rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 space-y-6 md:space-y-8 animate-fade-in">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text">Contact Us</h1>
             
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               <div className="space-y-6">
                 <p className="text-muted-foreground leading-relaxed">
                   Have questions or feedback? We'd love to hear from you. 
