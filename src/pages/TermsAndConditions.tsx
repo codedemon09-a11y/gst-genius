@@ -25,10 +25,10 @@ const TermsAndConditions = () => {
               </Button>
             </Link>
 
-            <div className="text-center mb-12">
-              <Scale className="w-16 h-16 text-primary mx-auto mb-4" />
-              <h1 className="text-4xl font-bold text-foreground mb-4">Terms and Conditions</h1>
-              <p className="text-muted-foreground">Last updated: {new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+            <div className="text-center mb-8 md:mb-12">
+              <Scale className="w-12 h-12 md:w-16 md:h-16 text-primary mx-auto mb-3 md:mb-4" />
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 md:mb-4">Terms and Conditions</h1>
+              <p className="text-muted-foreground text-sm md:text-base">Last updated: {new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
             </div>
 
             <div className="space-y-8">
