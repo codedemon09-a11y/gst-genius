@@ -21,7 +21,7 @@ import {
 import { formatCurrency } from '@/utils/calculations';
 
 const quickActions = [
-  { type: 'invoice', label: 'Tax Invoice', icon: FileText, href: '/create/invoice', color: 'from-blue-500 to-blue-600' },
+  { type: 'sale-invoice', label: 'Tax Invoice', icon: FileText, href: '/create/sale-invoice', color: 'from-blue-500 to-blue-600' },
   { type: 'quotation', label: 'Quotation', icon: FileCheck, href: '/create/quotation', color: 'from-green-500 to-green-600' },
   { type: 'proforma', label: 'Proforma', icon: FileClock, href: '/create/proforma', color: 'from-purple-500 to-purple-600' },
   { type: 'bill', label: 'Bill/Receipt', icon: Receipt, href: '/create/bill', color: 'from-orange-500 to-orange-600' },
@@ -41,7 +41,7 @@ const Dashboard = () => {
   }
 
   const totalRevenue = documents
-    .filter(d => d.type === 'invoice')
+    .filter(d => d.type === 'sale-invoice')
     .reduce((sum, d) => sum + d.grandTotal, 0);
 
   const thisMonthDocs = documents.filter(d => {
@@ -156,7 +156,7 @@ const Dashboard = () => {
                     <p className="text-sm text-muted-foreground">Avg. Invoice</p>
                     <p className="text-2xl font-bold text-foreground">
                       {documents.length > 0 
-                        ? formatCurrency(totalRevenue / documents.filter(d => d.type === 'invoice').length || 0)
+                        ? formatCurrency(totalRevenue / documents.filter(d => d.type === 'sale-invoice').length || 0)
                         : '₹0'
                       }
                     </p>
@@ -176,7 +176,7 @@ const Dashboard = () => {
                   <CardTitle>Recent Documents</CardTitle>
                   <CardDescription>Your latest invoices and quotations</CardDescription>
                 </div>
-                <Link to="/history">
+                <Link to="/download-history">
                   <Button variant="ghost" size="sm" className="gap-1">
                     View All <ArrowRight className="h-4 w-4" />
                   </Button>
@@ -192,12 +192,12 @@ const Dashboard = () => {
                       >
                         <div className="flex items-center gap-3">
                           <div className={`h-10 w-10 rounded-lg flex items-center justify-center ${
-                            doc.type === 'invoice' ? 'bg-blue-500/20 text-blue-500' :
+                            doc.type === 'sale-invoice' ? 'bg-blue-500/20 text-blue-500' :
                             doc.type === 'quotation' ? 'bg-green-500/20 text-green-500' :
                             doc.type === 'proforma' ? 'bg-purple-500/20 text-purple-500' :
                             'bg-orange-500/20 text-orange-500'
                           }`}>
-                            {doc.type === 'invoice' && <FileText className="h-5 w-5" />}
+                            {doc.type === 'sale-invoice' && <FileText className="h-5 w-5" />}
                             {doc.type === 'quotation' && <FileCheck className="h-5 w-5" />}
                             {doc.type === 'proforma' && <FileClock className="h-5 w-5" />}
                             {doc.type === 'bill' && <Receipt className="h-5 w-5" />}
