@@ -7,6 +7,7 @@ export type DocumentType =
   | 'purchase-order' 
   | 'delivery-challan'
   | 'sale-invoice'
+  | 'tax-invoice'
   | 'purchase-invoice'
   | 'sale-order'
   | 'job-work'
@@ -100,8 +101,9 @@ export interface DocumentTypeConfig {
 }
 
 export const DOCUMENT_TYPES: DocumentTypeConfig[] = [
-  { type: 'sale-invoice', label: 'Sale Invoice', shortLabel: 'Sale Inv', description: 'Tax invoice for sales', category: 'sales', hasGST: true, hasDueDate: true, hasPayment: true },
-  { type: 'invoice', label: 'Tax Invoice', shortLabel: 'Invoice', description: 'Standard tax invoice', category: 'sales', hasGST: true, hasDueDate: true, hasPayment: true },
+  { type: 'tax-invoice', label: 'Tax Invoice', shortLabel: 'Tax Inv', description: 'GST tax invoice', category: 'sales', hasGST: true, hasDueDate: true, hasPayment: true },
+  { type: 'sale-invoice', label: 'Sales Invoice', shortLabel: 'Sale Inv', description: 'Standard sales invoice', category: 'sales', hasGST: true, hasDueDate: true, hasPayment: true },
+  { type: 'invoice', label: 'Invoice', shortLabel: 'Invoice', description: 'Standard invoice', category: 'sales', hasGST: true, hasDueDate: true, hasPayment: true },
   { type: 'purchase-invoice', label: 'Purchase Invoice', shortLabel: 'Purch Inv', description: 'Invoice for purchases', category: 'purchase', hasGST: true, hasDueDate: true, hasPayment: true },
   { type: 'quotation', label: 'Quotation', shortLabel: 'Quote', description: 'Price quotation for clients', category: 'sales', hasGST: true, hasDueDate: true, hasPayment: false },
   { type: 'proforma', label: 'Proforma Invoice', shortLabel: 'Proforma', description: 'Preliminary invoice', category: 'sales', hasGST: true, hasDueDate: true, hasPayment: true },
@@ -180,6 +182,7 @@ export const DEFAULT_COMPANY_SETTINGS: CompanySettings = {
     'purchase-order': 'PO-',
     'delivery-challan': 'DC-',
     'sale-invoice': 'SI-',
+    'tax-invoice': 'TI-',
     'purchase-invoice': 'PI-',
     'sale-order': 'SO-',
     'job-work': 'JW-',
@@ -196,6 +199,7 @@ export const DEFAULT_COMPANY_SETTINGS: CompanySettings = {
     'purchase-order': 1,
     'delivery-challan': 1,
     'sale-invoice': 1,
+    'tax-invoice': 1,
     'purchase-invoice': 1,
     'sale-order': 1,
     'job-work': 1,
