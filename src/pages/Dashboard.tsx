@@ -21,7 +21,8 @@ import {
 import { formatCurrency } from '@/utils/calculations';
 
 const quickActions = [
-  { type: 'sale-invoice', label: 'Tax Invoice', icon: FileText, href: '/create/sale-invoice', color: 'from-blue-500 to-blue-600' },
+  { type: 'tax-invoice', label: 'Tax Invoice', icon: FileText, href: '/create/tax-invoice', color: 'from-indigo-500 to-indigo-600' },
+  { type: 'sale-invoice', label: 'Sales Invoice', icon: FileText, href: '/create/sale-invoice', color: 'from-blue-500 to-blue-600' },
   { type: 'quotation', label: 'Quotation', icon: FileCheck, href: '/create/quotation', color: 'from-green-500 to-green-600' },
   { type: 'proforma', label: 'Proforma', icon: FileClock, href: '/create/proforma', color: 'from-purple-500 to-purple-600' },
   { type: 'bill', label: 'Bill/Receipt', icon: Receipt, href: '/create/bill', color: 'from-orange-500 to-orange-600' },
@@ -192,11 +193,13 @@ const Dashboard = () => {
                       >
                         <div className="flex items-center gap-3">
                           <div className={`h-10 w-10 rounded-lg flex items-center justify-center ${
+                            doc.type === 'tax-invoice' ? 'bg-indigo-500/20 text-indigo-500' :
                             doc.type === 'sale-invoice' ? 'bg-blue-500/20 text-blue-500' :
                             doc.type === 'quotation' ? 'bg-green-500/20 text-green-500' :
                             doc.type === 'proforma' ? 'bg-purple-500/20 text-purple-500' :
                             'bg-orange-500/20 text-orange-500'
                           }`}>
+                            {doc.type === 'tax-invoice' && <FileText className="h-5 w-5" />}
                             {doc.type === 'sale-invoice' && <FileText className="h-5 w-5" />}
                             {doc.type === 'quotation' && <FileCheck className="h-5 w-5" />}
                             {doc.type === 'proforma' && <FileClock className="h-5 w-5" />}

@@ -29,7 +29,8 @@ import {
 } from 'lucide-react';
 
 const documentTypes = [
-  { type: 'sale-invoice', label: 'Tax Invoice', icon: FileText, shortLabel: 'Tax Invoice' },
+  { type: 'tax-invoice', label: 'Tax Invoice', icon: FileText, shortLabel: 'Tax Invoice' },
+  { type: 'sale-invoice', label: 'Sales Invoice', icon: FileText, shortLabel: 'Sales Invoice' },
   { type: 'quotation', label: 'Quotation', icon: FileCheck, shortLabel: 'Quotation' },
   { type: 'proforma', label: 'Proforma', icon: FileClock, shortLabel: 'Proforma' },
   { type: 'bill', label: 'Bill', icon: Receipt, shortLabel: 'Bill' },
@@ -102,7 +103,7 @@ const Index = () => {
                   <Settings className="h-4 w-4" />
                   <span className="hidden sm:inline">Settings</span>
                 </Button>
-                <Button size="sm" className="gap-1 sm:gap-2" onClick={() => navigate('/create/sale-invoice')}>
+                <Button size="sm" className="gap-1 sm:gap-2" onClick={() => navigate('/create/tax-invoice')}>
                   <Plus className="h-4 w-4" />
                   <span className="hidden sm:inline">New</span>
                 </Button>
