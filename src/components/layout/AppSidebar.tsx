@@ -51,14 +51,16 @@ const navGroups: NavGroup[] = [
   {
     title: 'Overview',
     items: [
-      { title: 'Dashboard', href: '/', icon: LayoutDashboard },
+      { title: 'Home', href: '/', icon: LayoutDashboard },
+      { title: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
     ],
     defaultOpen: true,
   },
   {
     title: 'Sales Documents',
     items: [
-      { title: 'Sale Invoice', href: '/create/sale-invoice', icon: FileText },
+      { title: 'Tax Invoice', href: '/create/tax-invoice', icon: FileText },
+      { title: 'Sales Invoice', href: '/create/sale-invoice', icon: FileText },
       { title: 'Quotation', href: '/create/quotation', icon: FileCheck },
       { title: 'Proforma Invoice', href: '/create/proforma', icon: FileClock },
       { title: 'Delivery Challan', href: '/create/delivery-challan', icon: Truck },
@@ -110,8 +112,8 @@ const navGroups: NavGroup[] = [
   {
     title: 'Settings',
     items: [
-      { title: 'Tax & GST Settings', href: '/settings/tax', icon: Settings },
-      { title: 'Download History', href: '/history', icon: Download },
+      { title: 'Tax & GST Settings', href: '/tax-settings', icon: Settings },
+      { title: 'Download History', href: '/download-history', icon: Download },
       { title: 'Help & Instructions', href: '/help', icon: HelpCircle },
     ],
     defaultOpen: false,
