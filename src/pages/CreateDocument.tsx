@@ -42,7 +42,7 @@ import {
 } from '@/components/ui/dialog';
 
 const DOC_TYPE_INFO: Partial<Record<DocumentType, { label: string; icon: React.ReactNode }>> = {
-  invoice: { label: 'Tax Invoice', icon: <FileText className="h-5 w-5" /> },
+  'sale-invoice': { label: 'Tax Invoice', icon: <FileText className="h-5 w-5" /> },
   quotation: { label: 'Quotation', icon: <FileCheck className="h-5 w-5" /> },
   proforma: { label: 'Proforma Invoice', icon: <FileClock className="h-5 w-5" /> },
   bill: { label: 'Bill / Receipt', icon: <Receipt className="h-5 w-5" /> },
@@ -51,7 +51,7 @@ const DOC_TYPE_INFO: Partial<Record<DocumentType, { label: string; icon: React.R
 const CreateDocument = () => {
   const { type } = useParams<{ type: string }>();
   const navigate = useNavigate();
-  const docType = (type as DocumentType) || 'invoice';
+  const docType = (type as DocumentType) || 'sale-invoice';
   
   const {
     companySettings,
